@@ -1,8 +1,6 @@
 from htmlnode import LeafNode
 from enum import Enum
 
-__all__ = ["TextNode", "TextType", "text_node_to_html_node"]
-
 
 class TextType(Enum):
     TEXT = "text"
@@ -21,8 +19,7 @@ class TextNode:
 
     def __eq__(self, other):
         return (
-            isinstance(other, TextNode)
-            and self.text_type == other.text_type
+            self.text_type == other.text_type
             and self.text == other.text
             and self.url == other.url
         )
